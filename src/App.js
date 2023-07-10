@@ -14,7 +14,7 @@ const App = () => {
     if (storedUser) {
       setLoginUser(JSON.parse(storedUser));
     }
-  }, []);
+  }, [user]);
 
   const handleLogin = (userData) => {
     // Save the user data to local storage and set the login state
