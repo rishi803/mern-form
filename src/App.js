@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 const App = () => {
-  const [user, setLoginUser] = useState(null);
+  const [user, setLoginUser] = useState({});
 
   // Check if a user token or identifier exists in local storage on component mount
   useEffect(() => {
@@ -36,7 +36,7 @@ const App = () => {
             exact
             path="/"
             element={
-              user ? (
+              user && user._id ? (
                 <Home setLoginUser={setLoginUser} handleLogout={handleLogout} />
               ) : (
                 <Login setLoginUser={handleLogin} />
