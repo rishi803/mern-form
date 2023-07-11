@@ -10,26 +10,27 @@ const App = () => {
 
   // Check if a user token or identifier exists in local storage on component mount
   useEffect(() => {
-    const storedUser = localStorage.getItem("user");
+    const storedUser = sessionStorage.getItem("user");
     if (storedUser) {
       setLoginUser(JSON.parse(storedUser));
     }
-  }, [user]);
+  }, []);
 
   const handleLogin = (userData) => {
     // Save the user data to local storage and set the login state
-    localStorage.setItem("user", JSON.stringify(userData));
+    sessionStorage.setItem("user", JSON.stringify(userData));
     setLoginUser(userData);
   };
 
   const handleLogout = () => {
     // Clear the user from local storage and reset the login state
-    localStorage.removeItem("user");
+    sessionStorage.removeItem("user");
     setLoginUser(null);
   };
 
   return (
     <div className="App">
+      {console.log(user)}
       <Router>
         <Routes>
           <Route
