@@ -40,7 +40,7 @@ const App = () => {
               )
             }
           />
-          <Route path="/login" element={<Login setLoginUser={handleLogin} />} />
+          <Route path="/login" element={<Login setLoginUser={setLoginUser} />} />
           <Route path="/register" element={<Register />} />
         </Routes>
       </Router>
