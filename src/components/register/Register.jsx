@@ -48,7 +48,7 @@ const Register = () => {
 
   return (
     <div className="register">
-      {console.log(user)}
+      {/* {console.log(user)} */}
       <h2>Register</h2>
       <input
         type="text"

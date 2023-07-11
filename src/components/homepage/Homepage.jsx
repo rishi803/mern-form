@@ -8,8 +8,9 @@ const Homepage = ({setLoginUser}) => {
 
   const handle=()=>{
     
-      setLoginUser({});
-      navigate("/login");
+    sessionStorage.removeItem("user");
+    setLoginUser({});
+    navigate("/login");
   }
 
   return (

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 const App = () => {
   const [user, setLoginUser] = useState({});
-
+ 
   // Check if a user token or identifier exists in local storage on component mount
   useEffect(() => {
     const storedUser = sessionStorage.getItem("user");
@@ -22,11 +22,7 @@ const App = () => {
     setLoginUser(userData);
   };
 
-  const handleLogout = () => {
-    // Clear the user from local storage and reset the login state
-    sessionStorage.removeItem("user");
-    setLoginUser(null);
-  };
+
 
   return (
     <div className="App">
@@ -38,7 +34,7 @@ const App = () => {
             path="/"
             element={
               user && user._id ? (
-                <Home setLoginUser={setLoginUser} handleLogout={handleLogout} />
+                <Home setLoginUser={setLoginUser} />
               ) : (
                 <Login setLoginUser={handleLogin} />
               )
