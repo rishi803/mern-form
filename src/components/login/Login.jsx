@@ -55,7 +55,7 @@ const Login = ({ setLoginUser }) => {
 
   return (
     <div className="login">
-      {/* {console.log(user)} */}
+      {console.log(user)}
       <h2>Login</h2>
       <input
         type="text"
